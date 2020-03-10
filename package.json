@@ -1,6 +1,6 @@
 {
 	"name": "github-search-vue",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Small app to search GitHub repositories",
 	"scripts": {
 		"webpack:dev": "webpack --mode development --watch",
