@@ -9,7 +9,7 @@ It is a reimplementation of [GitHub Search](https://github.com/garciaalvaro/gith
 - Built in **TypeScript** using **Vue**
 - It provides a server using **Node.js** and **Express** on port 5000
 - The CSS is built using **Stylus**
-- The **Webpack** bundler transforms the files and transpiles them using Babel, and other loaders and plugins
+- The **Webpack** bundler transforms and transpiles the files
 - It provides configuration files for **eslint** linter
 
 ---
@@ -35,12 +35,6 @@ Install the project dependencies and start the server. From the root directory i
 
 ---
 
-## Testing
-
-To run the provided tests, simply run: `$ npm test`
-
----
-
 ## Docker
 
 The project also comes with Docker configuration files, so it can be run using Docker. It uses the production version of the app. First it builds the scripts with Webpack, then it starts the pm2 server.
@@ -53,6 +47,10 @@ The project also comes with Docker configuration files, so it can be run using D
 ## Screenshots
 
 ![Screenshot Image](docs/screenshot.png)
+
+---
+
+## Changelog
 
 #### 1.0.0
 
