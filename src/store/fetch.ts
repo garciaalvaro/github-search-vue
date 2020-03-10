@@ -2,7 +2,6 @@ import { watch } from "@vue/composition-api";
 
 import { prepareRepository } from "./utils/prepareRepository";
 import {
-	fetch_timeout,
 	fetch_id,
 	url,
 	status,
@@ -16,13 +15,15 @@ watch(url, () => {
 	repositories_found.value = 0;
 });
 
+let fetch_timeout: null | NodeJS.Timeout = null;
+
 watch(url, (url, url_prev) => {
-	if (fetch_timeout.value) {
-		clearTimeout(fetch_timeout.value);
+	if (fetch_timeout) {
+		clearTimeout(fetch_timeout);
 	}
 
 	if (!url) {
-		fetch_timeout.value = null;
+		fetch_timeout = null;
 		fetch_id.value = 0;
 
 		return;
@@ -39,10 +40,10 @@ watch(url, (url, url_prev) => {
 
 	status.value = "waiting";
 
-	fetch_timeout.value = setTimeout(async () => {
+	fetch_timeout = setTimeout(async () => {
 		status.value = "loading";
 
-		fetch_timeout.value = null;
+		fetch_timeout = null;
 
 		// Fetch the data
 		const response = await fetch(url).catch(() => {

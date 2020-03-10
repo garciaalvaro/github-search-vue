@@ -45,8 +45,6 @@ export const url = computed<string>(() =>
 		  ].join("")
 );
 
-export const fetch_timeout = ref<null | NodeJS.Timeout>(null);
-
 export const fetch_id = ref(0);
 
 export const status = ref<Status>("characters_0");
