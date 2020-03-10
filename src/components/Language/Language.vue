@@ -28,7 +28,7 @@ export default defineComponent({
 			if (language === language_active.value) {
 				language_active.value = "";
 			} else {
-				language_active.value = language;
+				language_active.value = language as Language;
 			}
 		};
 
