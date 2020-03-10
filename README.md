@@ -53,3 +53,7 @@ The project also comes with Docker configuration files, so it can be run using D
 ## Screenshots
 
 ![Screenshot Image](docs/screenshot.png)
+
+#### 1.0.0
+
+- Initial release of functioning app
