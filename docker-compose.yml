@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  github-search-vue:
+    build: .
+    image: nodejs:13-alpine
+    container_name: github-search-vue
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
