@@ -1,8 +1,13 @@
 <template>
-	<div class="container container--content-column">
-		<label html="last_update">Last update</label>
+	<div :class="styles.container">
+		<label :for="styles.select">Last update</label>
 
-		<select id="last_update" v-model="last_update">
+		<select
+			:id="styles.select"
+			:class="styles.select"
+			:value="last_update || ''"
+			@change="e => updateLastUpdate(e.target.value)"
+		>
 			<option value="">Any time</option>
 			<option value="last_week">Last week</option>
 			<option value="last_month">Last month</option>
@@ -14,14 +19,4 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-
-import { last_update } from "../../store/state";
-
-export default defineComponent({
-	setup() {
-		return { last_update };
-	}
-});
-</script>
+<script src="./LastUpdate.ts" lang="ts"></script>

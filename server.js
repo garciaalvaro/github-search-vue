@@ -2,15 +2,13 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const DIRECTORY_DIST = path.join(__dirname, "dist");
-const DIRECTORY_ASSETS = path.join(__dirname, "assets");
 
 /**
  * Static directories
  */
 app.use(express.static(DIRECTORY_DIST));
-app.use(express.static(DIRECTORY_ASSETS));
 
 /**
  * Routes
