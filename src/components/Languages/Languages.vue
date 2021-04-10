@@ -1,5 +1,5 @@
 <template>
-	<div class="container container--content-fluid">
+	<div :class="styles.container">
 		<Language
 			v-for="language in languages"
 			:key="language"
@@ -8,29 +8,4 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-
-import Language from "../Language/Language.vue";
-
-export default defineComponent({
-	components: { Language },
-
-	setup() {
-		const languages: Language[] = [
-			"JavaScript",
-			"TypeScript",
-			"HTML",
-			"CSS",
-			"Objective-C",
-			"Java",
-			"Ruby",
-			"Python",
-			"PHP",
-			"C#"
-		];
-
-		return { languages };
-	}
-});
-</script>
+<script src="./Languages.ts" lang="ts"></script>

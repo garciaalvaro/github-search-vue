@@ -1,57 +1,53 @@
 ![Banner Image](docs/banner.png)
 
-# GitHub Search (Vue)
+# GitHub Search (Vue.js)
 
-This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search/).
+[Demo](https://garciaalvaro.github.io/github-search-vue-v2)
 
-It is a reimplementation of [GitHub Search](https://github.com/garciaalvaro/github-search) or  [GitHub Search (React)](https://github.com/garciaalvaro/github-search-react), built in Vue using the Composition API.
+This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search).
 
-- Built in **TypeScript** using **Vue**
-- It provides a server using **Node.js** and **Express** on port 5000
-- The CSS is built using **Stylus**
-- The **Webpack** bundler transforms and transpiles the files
-- It provides configuration files for **eslint** linter
+There are other implementations using [React](https://github.com/garciaalvaro/github-search-react), [Web Components](https://github.com/garciaalvaro/github-search) and [Vue.js v2](https://github.com/garciaalvaro/github-vue-v2).
+
+- Built in **TypeScript** using **Vue.js 3**
+- CSS pre-processed with **Stylus**
+- Bundled using **Webpack**
+- Provides a server using **Node.js** and **Express**
+- Includes **ESLint** linter and **Prettier** code formater
+- Includes configuration to be run in a **Docker** container
 
 ---
 
 ## Getting Started
 
-### Prerequisites
+### Installation
 
-To run this project make sure you have installed Node.js and npm in your machine.
+From the root directory inside your terminal run `$ npm install`
 
-### Installing and running
+### Development
 
-Install the project dependencies and start the server. From the root directory inside your terminal follow this steps:
+To start Webpack in watch mode and start the development server run `$ npm start`
+Once it is ready visit http://localhost:3000 in your browser
 
-- Install the dependencies: `$ npm install`
-- Once finished, bundle the files and start the server: `$ npm start`
-- Visit http://localhost:5000 in your browser
+### Production
 
-### Notes
-
-- To stop the server run: `$ npm stop`
-- You may also run the server and Webpack in development mode: `$ npm run dev`
+First build the production bundle `$ npm run build`
+Once finished, start the production server `$ npm run serve`
+To stop the production server run `$ npm run serve:stop`
 
 ---
 
 ## Docker
 
 The project also comes with Docker configuration files, so it can be run using Docker. It uses the production version of the app. First it builds the scripts with Webpack, then it starts the pm2 server.
- - First make sure you have Docker installed
- - Run the command: `$ docker-compose up -d` which will download and install the dependencies and set up the container
- - Once finished, it will be available in http://localhost:5000
+
+- First make sure you have Docker installed
+- Run the command `$ npm run docker` which will download and install the dependencies and set up the container
+- Once finished, it will be available in http://localhost:3000
+- To stop the container run the command: `$ npm run docker:stop`
+- If the container needs to be built again, run the command `$ npm run docker:recreate`
 
 ---
 
 ## Screenshots
 
 ![Screenshot Image](docs/screenshot.png)
-
----
-
-## Changelog
-
-#### 1.0.0
-
-- Initial release of functioning app

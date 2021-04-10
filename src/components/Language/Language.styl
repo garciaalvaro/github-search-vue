@@ -1,0 +1,30 @@
+/**
+ * Language
+ */
+
+.button
+	cursor pointer
+	padding .4em
+	font-size .95em
+	position relative
+
+	&:before
+		content ""
+		height .3em
+		position absolute
+		left .4em
+		right .4em
+		bottom .2em
+		background-color var(--color_07)
+		transform scaleY(0)
+		transform-origin bottom
+		transition transform .15s var(--ease), opacity .15s var(--ease)
+		opacity 0
+
+	&:hover:before
+		transform scaleY(1)
+		opacity .7
+
+	&.is_active:before
+		transform scaleY(1)
+		opacity 1
