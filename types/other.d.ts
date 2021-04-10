@@ -1,5 +1,5 @@
 // Repository received from the API
-type RepositoryRaw = {
+interface RepositoryRaw {
 	id: number;
 	html_url: string;
 	description: string;
@@ -13,9 +13,9 @@ type RepositoryRaw = {
 	license: null | {
 		name: string;
 	};
-};
+}
 
-type Repository = {
+interface Repository {
 	id: number;
 	url: string;
 	description: string;
@@ -25,12 +25,11 @@ type Repository = {
 	language: string;
 	updated: string;
 	license: string;
-};
+}
 
-type MinStars = "" | "10" | "100" | "1000" | "10000" | "50000" | "100000";
+type MinStars = "10" | "100" | "1000" | "10000" | "50000" | "100000";
 
 type LastUpdate =
-	| ""
 	| "last_week"
 	| "last_month"
 	| "last_6_months"
@@ -39,7 +38,6 @@ type LastUpdate =
 	| "last_3_years";
 
 type Language =
-	| ""
 	| "JavaScript"
 	| "TypeScript"
 	| "HTML"
@@ -51,19 +49,4 @@ type Language =
 	| "PHP"
 	| "C#";
 
-type FetchedData = {
-	items: RepositoryRaw[];
-	total_count: number;
-	incomplete_results: boolean;
-};
-
-type Status =
-	| null
-	| "characters_0"
-	| "characters_1"
-	| "characters_2"
-	| "waiting"
-	| "loading"
-	| "no_results"
-	| "too_many_requests"
-	| "error";
+type Option = { value: string | number; label: string };
