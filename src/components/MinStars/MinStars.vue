@@ -1,27 +1,24 @@
 <template>
-	<div class="container container--content-column">
-		<label html="min_stars">Minimum stars</label>
+	<div :class="styles.container">
+		<label :for="styles.select">Minimum stars</label>
 
-		<select id="min_stars" v-model="min_stars">
+		<select
+			:id="styles.select"
+			:class="styles.select"
+			:value="min_stars || ''"
+			@change="e => updateMinStars(e.target.value)"
+		>
 			<option value="">Any amount</option>
-			<option value="10">{{ (10).toLocaleString() }}</option>
-			<option value="100">{{ (100).toLocaleString() }}</option>
-			<option value="1000">{{ (1000).toLocaleString() }}</option>
-			<option value="10000">{{ (10000).toLocaleString() }}</option>
-			<option value="50000">{{ (50000).toLocaleString() }}</option>
-			<option value="100000">{{ (100000).toLocaleString() }}</option>
+
+			<option
+				v-for="{ value, label } in values"
+				:key="label"
+				:value="value"
+			>
+				{{ label }}
+			</option>
 		</select>
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-
-import { min_stars } from "../../store/state";
-
-export default defineComponent({
-	setup() {
-		return { min_stars };
-	}
-});
-</script>
+<script src="./MinStars.ts" lang="ts"></script>

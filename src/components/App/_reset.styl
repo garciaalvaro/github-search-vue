@@ -37,6 +37,22 @@ input
 	color inherit
 	opacity .3
 
+button
+	cursor pointer
+	padding .4em
+	font-size .95em
+	position relative
+
+	&
+	&:focus
+	&:hover
+		background none
+		outline none
+		box-shadow none
+		border none
+		color inherit
+		letter-spacing inherit
+
 a
 a:visited
 a:focus
@@ -55,7 +71,7 @@ a:before
 	background-color var(--color_07)
 	transform scaleY(0)
 	transform-origin bottom
-	transition transform .15s ease, opacity .15s ease
+	transition transform .15s var(--ease), opacity .15s var(--ease)
 	opacity 0
 
 a:hover:before

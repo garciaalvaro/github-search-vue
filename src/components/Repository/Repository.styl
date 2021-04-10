@@ -2,19 +2,19 @@
  * Repository
  */
 
-.item
+.container
 	padding 2em
 	margin 0 -2em
 	border-radius .15em
-	transition background-color .15s ease
+	transition background-color .1s var(--ease)
 
 	&:hover
 		background-color var(--color_01)
 
-.item__body
+.body
 	margin .7em 0
 
-.item__stars
+.stars
 	display flex
 	align-items center
 
@@ -27,12 +27,22 @@
 		margin-right .7em
 		color var(--color_02)
 
-.item__license:empty
-.item__language:empty
-.item__updated:empty
+.license:empty
+.language:empty
+.updated:empty
 	display none
 
-.item__license
-.item__language
-.item__stars
+.license
+.language
+.stars
 	margin-right .7em
+
+.license
+.language
+.updated
+.stars
+	font-size .9em
+
+.footer
+	display flex
+	flex-wrap wrap
